@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.csw.encachedemo.dao.DogDao">
+        <resultMap type="Dog" id="dogList">
+            <id column="did" property="id"/>
+            <result column="dname" property="name"/>
+            <result column="dage" property="age"/>
+        </resultMap>
+
+    <insert id="save">
+        insert  into dog values(#{dog.id},#{dog.name},#{dog.age})
+    </insert>
+    <delete id="delete">
+        delete  from dog where id=#{uuid}
+    </delete>
+    <select id="findByUuid" resultType="Dog">
+        select * from dog where id=#{uuid}
+    </select>
+
+    <select id="selectAll" resultMap="dogList">/*查询返回list集合*/
+        select d.id as did,d.name as dname,d.age as dage from dog d
+    </select>
+    <update id="update">
+        update dog set name=#{dog.name},age=#{dog.age} where id=#{dog.id}
+    </update>
+</mapper>
