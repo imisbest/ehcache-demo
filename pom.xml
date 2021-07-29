@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.csw</groupId>
-    <artifactId>encache-demo</artifactId>
+    <artifactId>ehcache-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>encache-demo</name>
+    <name>ehcache-demo</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
